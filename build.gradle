@@ -17,7 +17,7 @@ plugins {
 group 'net.benfro'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 12
+sourceCompatibility = 14
 
 repositories {
     mavenLocal()
@@ -41,14 +41,14 @@ dependencies {
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
     testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
     // https://mvnrepository.com/artifact/com.cedarsoft.dependencies-sets/openjfx
-    // compile group: 'com.cedarsoft.dependencies-sets', name: 'openjfx', version: '8.9.0', ext: 'pom'
+    //compile group: 'com.cedarsoft.dependencies-sets', name: 'openjfx', version: '8.9.0', ext: 'pom'
 
 
 }
 
 javafx {
-    version = '11.0.2'
-    //sdk = '/Users/benfro/Downloads/javafx-sdk-11.0.2'
+    version = '14.0.1'
+    //sdk = '/Users/benfro/Documents/Programming/resources/javafx-sdk-14.0.1'
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base' ]
 }
 
