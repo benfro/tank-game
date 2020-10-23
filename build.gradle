@@ -7,11 +7,12 @@ buildscript {
 }
 
 plugins {
+    id "application"
     id 'java'
     id 'maven'
     id "io.freefair.lombok" version "5.0.1"
     id 'idea'
-    id "org.openjfx.javafxplugin" version "0.0.8"
+    id 'org.openjfx.javafxplugin' version '0.0.9'
 }
 
 group 'net.benfro'
@@ -25,7 +26,13 @@ repositories {
     jcenter()
 }
 
-//mainClassName = 'net.benfro.tanks.TankGame'
+ext {
+    javaMainClass = "net.benfro.tanks.TankGame"
+}
+
+application {
+    mainClassName = javaMainClass
+}
 
 dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '29.0-jre'
@@ -34,23 +41,18 @@ dependencies {
     testCompile group: 'org.mockito', name: 'mockito-core', version: '3.3.3'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.7.0-M1'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
-    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
-    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.13.2'
-    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
     testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
-    // https://mvnrepository.com/artifact/com.cedarsoft.dependencies-sets/openjfx
-    //compile group: 'com.cedarsoft.dependencies-sets', name: 'openjfx', version: '8.9.0', ext: 'pom'
-
-
 }
 
 javafx {
-    version = '14.0.1'
-    //sdk = '/Users/benfro/Documents/Programming/resources/javafx-sdk-14.0.1'
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.base' ]
+    version = '11'
+    sdk = '/Users/benfro/Documents/Programming/javafx-sdk-11.0.2'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
+
+
 
 test {
     useJUnitPlatform()
